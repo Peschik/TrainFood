@@ -51,7 +51,7 @@ const tabsFunc = () => {
         tabs.forEach((tabhead, index) => {
             tabhead.addEventListener('click', () => changeActiveTabs(index))
         })
-        changeContent(0);
+        changeContent();
 
 } 
 tabsFunc();
