@@ -56,6 +56,18 @@
         forms.forEach(item => {
             postData(item);
         })
+
+        const sendData = async (url, data) => {
+            const res = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-type':'application/json'
+                    },
+                    body: data
+                });
+                return await res.json()
+        };
+
         function postData(form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -74,24 +86,15 @@
 
                 const formData = new FormData(form);
 
-                const object = {};
-                formData.forEach((value, key) => {
-                    object[key] = value;
-                });
+                const json = JSON.stringify(Object.fromEntries(formData.entries()))
 
 
                 //If we use the combination of XMLHttpRequest and FormData
                 //we don't need to setRequestHeader, it creates by auto
 
-
-                fetch('server.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-type':'application/json'
-                    },
-                    body: JSON.stringify(object)
-                })
-                .then(data => data.text())
+                
+                
+                sendData('http://localhost:3000/requests', json)
                 .then(data => {
                         console.log(data);
                         showThanksModal(message.success);
@@ -131,7 +134,9 @@
             }, 4000)
             
         }
-       
+       fetch('http://localhost:3000/menu')
+        .then(data => data.json())
+        .then(res => console.log(res))
     }
     
     sendForm();
