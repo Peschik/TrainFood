@@ -1,5 +1,5 @@
 
-const getData = () => {
+const cards = () => {
     const field = document.querySelector('.menu__field'),
     cardContainer = field.firstElementChild;
     
@@ -82,5 +82,4 @@ const getGoods = () => {
 
     getGoods();
 }
-
-getData();
+module.exports = cards;

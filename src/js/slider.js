@@ -1,30 +1,4 @@
-
-
-//     //попробовать так
-
-//     // const showSlides = (n) => {
-//     //     if (n > slides.length) {
-//     //         slideIndex = 4;
-//     //     }
-//     //     if (n < 1) {
-//     //         slideIndex = 1;
-//     //     }
-//     //     slides.forEach(item => item.style.display = 'none');
-//     //     slides[slideIndex - 1].style.display = 'block';
-//     //     indexActiveSlide.textContent = `0${slideIndex}`;
-//     // }
-//     // const plusSlides = (n) => {
-//     //     showSlides(slideIndex += n)
-//     // }
-//     // prevSlide.addEventListener('click', () => {
-//     //     plusSlides(-1);
-//     // })
-//     // nextSlide.addEventListener('click', () => {
-//     //     plusSlides(1);
-//     // })
-
-//     // plusSlides(1)
-// }
+const slider = () => {
 
 let offset = 0;
 let slideIndex = 1;
@@ -151,3 +125,5 @@ const currentSlideChange = () => {
 }
 dotActivate()
 dotSlideChange()
+}
+export default slider;

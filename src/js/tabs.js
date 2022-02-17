@@ -54,4 +54,4 @@ const tabsFunc = () => {
         changeContent(0);
 
 } 
-tabsFunc();
+export default tabsFunc;

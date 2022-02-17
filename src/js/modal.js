@@ -1,4 +1,5 @@
-    const sendForm = () => {
+    import { sendData } from "./services/services";
+    const modal = () => {
         const btns = document.querySelectorAll('.btn'),
             modal = document.querySelector('.modal');
 
@@ -57,17 +58,7 @@
             postData(item);
         })
 
-        const sendData = async (url, data) => {
-            const res = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-type':'application/json'
-                    },
-                    body: data
-                });
-                return await res.json()
-        };
-
+        
         function postData(form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -139,5 +130,4 @@
         .then(res => console.log(res))
     }
     
-    sendForm();
-    
+    export default modal;    
